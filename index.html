@@ -1,0 +1,440 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Perfil Z · Avaliação comportamental — candidata privada</title>
+<style>
+:root{font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;color:#1c2e42;background:#f3f6fb;--P:#cc2944;--S:#e2a200;--C:#11996e;--A:#316bd6;--line:#dce4ee}*{box-sizing:border-box}body{margin:0}main{max-width:990px;margin:0 auto;padding:32px 18px 60px}header{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:20px}.logo{font-weight:900;color:#17355b;letter-spacing:.13em}.small{font-size:12px;color:#65778a}.panel{background:#fff;border:1px solid var(--line);border-radius:21px;padding:25px;margin:16px 0;box-shadow:0 6px 25px #1736560c}h1{font-size:clamp(31px,5vw,47px);letter-spacing:-.04em;line-height:1.08;margin:10px 0}h2{font-size:24px;letter-spacing:-.02em;margin:4px 0 13px}h3{font-size:17px;margin:8px 0}p{line-height:1.55}.muted{color:#62758b}.pill{display:inline-block;border-radius:100px;padding:7px 12px;font-size:12px;font-weight:750;background:#edf2f9;color:#45617d}.progress{height:9px;background:#e8eef6;border-radius:99px;overflow:hidden;margin:17px 0}.progress>div{height:100%;background:#2566c3;transition:width .2s}.btn{border:none;padding:13px 18px;border-radius:11px;font:inherit;font-weight:750;cursor:pointer;background:#1b5db3;color:#fff}.btn.alt{background:#eaf0f7;color:#294a6c}.btn:disabled{opacity:.4;cursor:not-allowed}.bar-actions{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-top:23px}.intro-cards{display:grid;grid-template-columns:1fr 1fr;gap:12px}.intro-card{border-radius:14px;padding:16px;background:#f4f7fb}.intro-card strong{display:block;margin-bottom:7px}.group{border:1px solid #e0e8f0;border-radius:15px;padding:15px;margin:13px 0}.group-head{font-size:13px;color:#60758b;font-weight:750;margin-bottom:12px}.options{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.option{display:flex;align-items:center;justify-content:space-between;gap:7px;background:#f7f9fc;border-radius:10px;padding:9px 10px;min-height:52px}.word{font-weight:700;font-size:14px}.choices{display:flex;gap:5px}.choice{border:1px solid #cbd7e6;color:#4d6681;border-radius:7px;background:white;font-size:11px;font-weight:800;padding:8px 9px;cursor:pointer}.choice.more.sel{background:#136ba9;color:white;border-color:#136ba9}.choice.less.sel{background:#d84b83;color:white;border-color:#d84b83}.choice:focus-visible,.btn:focus-visible{outline:3px solid #7ca8db;outline-offset:2px}.notice{border-left:4px solid #438bc3;background:#f1f7ff;border-radius:8px;padding:13px 15px;font-size:14px;line-height:1.55}.danger{border-color:#f0bfc8;background:#fff2f4;color:#9e263b}.score-row{margin:14px 0}.score-head{display:flex;justify-content:space-between;gap:10px;font-size:14px;margin-bottom:7px}.track{height:12px;background:#e7edf4;border-radius:99px;overflow:hidden}.fill{height:100%;border-radius:99px}.two-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}.pill-lead{background:#edf2fa;border-radius:13px;padding:16px;font-size:20px;font-weight:800}.legend{display:flex;flex-wrap:wrap;gap:15px;color:#5c7084;font-size:13px}.dot{display:inline-block;width:10px;height:10px;border-radius:100%;margin-right:5px}table{border-collapse:collapse;width:100%;font-size:14px}th,td{border-bottom:1px solid #e7edf4;padding:11px 7px;text-align:left}td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}input[type=text]{border:1px solid #bfcddd;border-radius:9px;padding:12px;font:inherit;width:100%;max-width:450px}.footnote{font-size:12px;color:#718195;line-height:1.55}.hide{display:none!important}@media(max-width:650px){main{padding:18px 10px 45px}.panel{padding:16px;border-radius:15px}.options,.two-grid,.intro-cards{grid-template-columns:1fr}.option{min-height:48px}.group{padding:10px}.word{font-size:14px}.choice{padding:8px 10px}th,td{font-size:12px}}@media print{body{background:#fff}header,.progress,.bar-actions,.not-print{display:none!important}main{padding:0}.panel{box-shadow:none;break-inside:avoid}#assessment,#intro{display:none!important}#results{display:block!important}}
+
+.isolated-chart{width:100%;height:auto;display:block;overflow:visible}
+.isolated-chart text{font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif}
+.isolated-legend{display:flex;gap:20px;flex-wrap:wrap;margin:12px 0 17px;font-size:13px;color:#41556e}
+.legend-mark{width:16px;height:5px;border-radius:8px;display:inline-block;vertical-align:middle;margin-right:6px}
+.summary-callout{background:#f2f6fb;padding:13px 15px;border-radius:12px;border:1px solid #e0e9f3;font-size:14px;line-height:1.5}
+.table-wrap{overflow-x:auto}
+@media(max-width:650px){.isolated-chart{min-width:0}.isolated-chart text{font-size:11px}}
+.word-box{display:flex;flex-direction:column;gap:5px;min-width:0;flex:1}.word-help{font-size:12px;line-height:1.45;color:#50647d;max-width:100%;overflow-wrap:anywhere}.option{align-items:center;gap:12px}.reading-item{border-bottom:1px solid #e8eef6;padding:10px 0}.reading-item:last-child{border-bottom:0}.reading-item p{margin:5px 0 9px}.choice{min-height:38px}.import-panel{margin-top:22px;padding:20px;border:1px solid #cbd8e9;background:#f7faff;border-radius:14px}.import-panel h2{font-size:20px;margin:0 0 8px}.import-panel input[type=file]{display:block;max-width:100%;margin:12px 0;font:inherit}.import-status{font-size:13px;line-height:1.5;margin:10px 0 0}.import-status.error{color:#a32139}.import-status.ok{color:#116a4c}.word-help:empty{display:none}@media(max-width:650px){.option{align-items:flex-start;flex-direction:column}.choices{width:100%}.choice{flex:1}}
+
+/* Etapa 7A.3: camada candidata isolada de apresentação, sem modificar o motor. */
+#results>.panel{display:none!important}
+.report-candidate-shell{margin:0 auto;max-width:930px}
+.one-page-report{width:210mm;min-height:297mm;margin:auto;padding:12.5mm 13mm 11mm;background:#fff;color:#193149;border:1px solid #d6dfe7;box-shadow:0 9px 32px #15344b1a;font-size:10.5pt;line-height:1.23;display:flex;flex-direction:column;gap:3.3mm}
+.one-page-report *{box-sizing:border-box}
+.one-page-report .r-header{display:flex;justify-content:space-between;gap:10mm;align-items:end;padding-bottom:3mm;border-bottom:2px solid #1668b1}
+.one-page-report .r-header h1{font-size:19pt;letter-spacing:-.035em;margin:1mm 0;line-height:1.1}
+.one-page-report .r-header p{margin:0;font-size:8pt;color:#53677c}
+.one-page-report .r-mark{font-weight:900;color:#0d66ba;font-size:9pt;letter-spacing:.12em;white-space:nowrap}
+.one-page-report h2{font-size:10.5pt;margin:0 0 2mm}
+.one-page-report .r-contexts{display:grid;grid-template-columns:1fr 1fr;gap:3mm}
+.one-page-report .r-card{border:1px solid #dce7ee;border-radius:3mm;padding:3.3mm;background:#fff;min-width:0}
+.one-page-report .r-label{font-size:7.2pt;text-transform:uppercase;letter-spacing:.09em;color:#64788b;font-weight:800}
+.one-page-report .r-emphasis{font-size:11pt;font-weight:800;color:#1a344a;min-height:11mm;margin:1.2mm 0}
+.one-page-report .r-barline{display:flex;align-items:center;gap:2mm;font-size:7.6pt;margin:1mm 0}
+.one-page-report .r-code{width:4mm;font-weight:800}
+.one-page-report .r-barbg{height:2.3mm;background:#edf1f5;border-radius:2mm;flex:1;overflow:hidden}
+.one-page-report .r-barfill{height:100%;border-radius:2mm}
+.one-page-report .r-number{width:12mm;text-align:right;font-variant-numeric:tabular-nums;color:#3c5267}
+.one-page-report .r-box{border:1px solid #dce7ee;border-radius:3mm;padding:3.2mm 3.6mm;min-width:0}
+.one-page-report .r-section-title{font-size:11pt;font-weight:800;margin:0 0 2.2mm;letter-spacing:-.01em}
+.one-page-report .r-intro{font-size:8pt;color:#687d8e;margin:0 0 2mm}
+.one-page-report .r-trait-row{display:grid;grid-template-columns:20mm 1fr;gap:2mm;padding:1.4mm 0;border-top:1px solid #e7edf2;break-inside:avoid}
+.one-page-report .r-trait-row:first-child{border-top:0}
+.one-page-report .r-profile-name{font-size:8.5pt;font-weight:800;padding-top:1mm}
+.one-page-report .r-triad{display:grid;gap:.7mm;font-size:8.8pt;line-height:1.25}
+.one-page-report .r-triad b{color:#43566d;font-size:8.2pt}
+.one-page-report .r-elist{margin:0;padding-left:4.4mm;display:grid;gap:1.3mm;font-size:8.8pt;line-height:1.28}
+.one-page-report .r-summary{font-size:8.8pt;line-height:1.3;background:#f0f6fc;border-radius:2mm;padding:2.8mm 3mm}
+.one-page-report .r-summary b{color:#1c4e7e}
+.one-page-report .r-footer{border-top:1px solid #e0e8ef;margin-top:auto;padding-top:2mm;font-size:7.1pt;line-height:1.27;color:#53687b}
+.candidate-actions{display:flex;gap:10px;flex-wrap:wrap;margin:17px auto 30px;max-width:210mm}
+@page{size:A4 portrait;margin:0}
+@media print{html,body{margin:0!important;padding:0!important;width:210mm!important;background:white!important} main{padding:0!important;margin:0!important;max-width:none!important}header,.progress,.candidate-actions{display:none!important}#results{display:block!important;margin:0!important;padding:0!important}#intro,#assessment{display:none!important}.report-candidate-shell{margin:0!important;width:210mm!important;max-width:none!important}.one-page-report{width:210mm!important;height:297mm!important;min-height:297mm!important;max-height:297mm!important;box-shadow:none!important;border:none!important;margin:0!important;page-break-after:avoid!important;break-after:avoid!important;overflow:hidden!important;gap:3.1mm!important}#results>.panel{display:none!important}}
+@media screen and (max-width:850px){.report-candidate-shell{overflow-x:auto}.one-page-report{margin:0;transform-origin:top left}.candidate-actions{padding:0 8px}}
+
+
+/* Etapa 7A: ajuste exclusivamente visual, sem alteração de cálculo ou conteúdo. */
+.one-page-report{gap:3.5mm;line-height:1.29}
+.one-page-report .r-barline{font-size:8.5pt}
+.one-page-report .r-label{font-size:8.2pt}
+.one-page-report .r-intro{font-size:9.0pt}
+.one-page-report .r-profile-name{font-size:9.3pt}
+.one-page-report .r-triad{font-size:10.0pt;line-height:1.34;gap:1mm}
+.one-page-report .r-triad b{font-size:9.1pt}
+.one-page-report .r-elist{font-size:10.0pt;line-height:1.32}
+.one-page-report .r-summary{font-size:10.0pt;line-height:1.35}
+.one-page-report .r-footer{font-size:8.3pt;line-height:1.32}
+@media print {.one-page-report{gap:3.25mm!important}}
+
+/* 7B candidate - presentation and guidance only, original motor untouched */
+:root{--h-accent:#1f67bc;--e-accent:#168a6e}
+body{background:linear-gradient(180deg,#f3f7fd,#f8fafc 460px)}
+#intro .ux-kicker{display:inline-block;color:#17569e;font-weight:850;letter-spacing:.09em;text-transform:uppercase;font-size:12px;margin:8px 0}
+.ux-demo{background:#f7f9fe;border:1px solid #cadbec;border-radius:16px;padding:16px;margin:17px 0}
+.ux-demo h3{margin:0 0 4px;font-size:18px}.ux-demo p{margin:3px 0 13px;font-size:13px;color:#54677e}
+.ux-demo-options{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+.ux-demo-option{display:flex;align-items:center;justify-content:space-between;gap:8px;background:white;padding:10px;border-radius:10px;border:1px solid #d6e0ec}
+.ux-demo-option span{font-size:13px;font-weight:700}.ux-demo-option .ux-mark{border-radius:8px;background:#f2f5f9;padding:7px;font-size:11px}
+.ux-demo-option .ux-mark.selected{background:#d7f5e8;color:#08714c}.ux-demo-option .ux-mark.selected.less{background:#ffdfeb;color:#a3275a}
+.ux-demo-note{font-size:12px;color:#49627d;margin-top:12px}
+#assessment{--accent:var(--h-accent)}#assessment[data-context=E]{--accent:var(--e-accent)}
+#assessment .pill{background:color-mix(in srgb,var(--accent) 12%,white);color:var(--accent)}
+#context-instruction{border-left-color:var(--accent)}
+.ux-stage-line{display:flex;justify-content:space-between;align-items:center;gap:12px;margin:12px 0;color:#547086;font-size:12px;font-weight:750}
+.ux-stage-meter{height:10px;background:#e7eef6;border-radius:99px;overflow:hidden;flex:1;min-width:70px}
+.ux-stage-meter>span{display:block;height:100%;background:var(--accent);transition:width .2s}
+#assessment .group{padding:17px 16px;margin:14px 0;scroll-margin-top:15px;background:#fff;border-color:#dce6f1}
+#assessment .group[data-complete=true]{border-color:#aadbc8;background:#fbfefc}
+#assessment .group-head{display:flex;justify-content:space-between;font-size:14px}
+.ux-complete{font-size:12px;font-weight:750;color:#15805b}
+#assessment .option{align-items:stretch;min-height:86px;gap:10px;padding:12px;background:#f6f9fc}
+#assessment .word-box{min-width:0;flex:1;display:flex;flex-direction:column;justify-content:center;gap:4px}
+#assessment .word{font-size:16px;line-height:1.15}
+#assessment .word-help{font-size:12px;line-height:1.4;color:#5a6e80}
+#assessment .choices{display:flex;align-items:center;gap:6px}
+#assessment .choice{min-width:62px;min-height:40px;padding:8px 10px;font-size:12px}
+#assessment .choice.more.sel{background:#0c795f;border-color:#0c795f}
+#assessment .choice.less.sel{background:#bd3f66;border-color:#bd3f66}
+#assessment .choice:focus-visible{outline:3px solid #1c67d1;outline-offset:2px}
+.ux-hint{font-size:12px;color:#526b83;margin:12px 0}
+#ux-page-status{font-size:13px;color:#44617c;font-weight:750}
+.ux-transition{position:fixed;inset:0;background:rgba(13,34,56,.66);z-index:9999;display:flex;align-items:center;justify-content:center;padding:16px}
+.ux-transition[hidden]{display:none}
+.ux-dialog{background:white;width:min(520px,100%);border-radius:24px;padding:28px;box-shadow:0 24px 70px #061a324a;max-height:90vh;overflow:auto}
+.ux-dialog .ux-icon{width:54px;height:54px;border-radius:16px;display:grid;place-items:center;background:#e1f6ec;color:#0d7860;font-size:26px;margin-bottom:13px}
+.ux-dialog h2{font-size:26px;margin:8px 0}.ux-dialog p{color:#465b73}.ux-dialog .ux-switch{background:#f2f8f6;padding:15px;border-radius:12px;line-height:1.55}
+.ux-dialog .bar-actions{justify-content:flex-end}
+#assessment .bar-actions{position:sticky;bottom:0;z-index:10;background:#ffffffed;padding:12px 0;margin-top:14px;border-top:1px solid #e5ebf2;backdrop-filter:blur(8px)}
+@media(max-width:730px){#assessment .options{grid-template-columns:1fr}#assessment .option{min-height:82px}#assessment .word{font-size:16px}#assessment .word-help{font-size:13px}.ux-demo-options{grid-template-columns:1fr}.ux-dialog{padding:21px}}
+@media(max-width:375px){#assessment .option{flex-direction:column}#assessment .choices{justify-content:flex-start}#assessment .choice{flex:1}}
+@media print{.ux-transition,#ux-page-status,.ux-stage-line,.ux-demo{display:none!important}}
+
+/* UX 7B v0.2 — somente apresentação; sem armazenamento de respostas */
+#assessment .group[hidden]{display:none!important}
+#assessment .choice{min-height:48px;min-width:72px;padding:10px 12px;touch-action:manipulation}
+#assessment .group{margin:12px 0}
+.ux-compact-guide{margin:12px 0;padding:12px 15px;background:#eef5fc;border:1px solid #cadeef;border-radius:13px;color:#27465f;font-size:13px;line-height:1.5}
+.ux-compact-guide strong{color:#123d69}
+#assessment .choice:focus-visible,#assessment .btn:focus-visible,#assessment button:focus-visible,.ux-transition button:focus-visible{outline:3px solid #1354b7!important;outline-offset:3px}
+.ux-stage-meter{height:12px;min-width:100px}
+.ux-nav-tip{font-size:12px;line-height:1.45;color:#52677b;padding:8px 0}
+#assessment .group-head{gap:12px}
+#assessment .option{min-height:94px}
+@media(max-width:730px){#assessment .group{padding:13px 12px}#assessment .choice{min-height:48px;min-width:76px}#assessment .option{min-height:85px}}
+@media print{.ux-compact-guide,.ux-nav-tip{display:none!important}}
+</style></head><body><main>
+<header><span class="logo">Perfil <span style="color:#286cbb">Z</span></span><span class="small">Instrumento PSCA · pré-publicação · uso local</span></header>
+<div class="progress not-print"><div id="prog" style="width:0"></div></div>
+<section id="intro" class="panel"><span class="pill">Autoconhecimento e gestão</span><h1>Entenda seu jeito de agir e o que o ambiente espera de você.</h1><p class="muted">O Perfil Z identifica tendências comportamentais. Não é diagnóstico, teste psicológico nem avaliação de competência ou desempenho.</p>
+<div class="intro-cards"><div class="intro-card"><strong>H · Habitual</strong><span>Escolha como você normalmente se percebe e age.</span></div><div class="intro-card"><strong>E · Exigido</strong><span>Escolha como você percebe as expectativas do ambiente atual.</span></div></div>
+<p>Em cada linha, escolha uma palavra que <b>MAIS</b> representa o contexto e outra que <b>MENOS</b> o representa. As duas não podem ser a mesma. Leia as explicações apresentadas abaixo das palavras antes de escolher.</p>
+<div class="ux-demo" id="ux-demo"><h3>Exemplo de escolha — não vale pontos</h3><p>Imagine um grupo de palavras fictícias. Você escolheria uma que mais combina com o contexto e outra, diferente, que menos combina.</p><div class="ux-demo-options"><div class="ux-demo-option"><span>Jardineiro</span><b class="ux-mark selected">MAIS ✓</b></div><div class="ux-demo-option"><span>Viajante</span><b class="ux-mark">—</b></div><div class="ux-demo-option"><span>Cozinheiro</span><b class="ux-mark selected less">MENOS ✓</b></div><div class="ux-demo-option"><span>Leitor</span><b class="ux-mark">—</b></div></div><div class="ux-demo-note">As palavras são apenas didáticas. No teste, leia as descrições antes de escolher. MAIS e MENOS devem ser atribuídos a palavras diferentes.</div></div>
+<p class="ux-hint">São 40 grupos em duas partes (H e E), apresentados em pares para reduzir a rolagem. Você pode voltar e corrigir respostas. Nesta candidata, seu progresso não é salvo ao fechar ou atualizar a página.</p>
+<label class="small" for="participant">Nome (opcional)</label><div><input id="participant" type="text" maxlength="90" placeholder="Nome para identificar seu relatório"></div>
+<div class="bar-actions"><span class="small">20 grupos por contexto · sem envio automático de dados · versão local de testes</span><button class="btn" id="start">Iniciar avaliação</button></div>
+<div class="import-panel not-print"><h2>Já fez a avaliação? Importe seu resultado</h2><p class="muted">Escolha um arquivo JSON do Perfil Z ou de versões históricas MCU para visualizar imediatamente o relatório, sem responder novamente. Aceita resultados antigos P/S/C/M e arquivos PSCA. Os dados são processados neste navegador.</p><label for="import-json" class="small">Selecionar resultado (.json)</label><input type="file" id="import-json" accept=".json,application/json"><button type="button" class="btn alt" id="import-button">Visualizar resultado do JSON</button><div id="import-status" class="import-status" role="status" aria-live="polite"></div></div></section>
+<section id="assessment" class="panel hide"><div style="display:flex;justify-content:space-between;gap:14px;align-items:start;flex-wrap:wrap"><div><span class="pill" id="context-chip"></span><h2 id="question-head"></h2></div><span class="small" id="counter"></span></div><div class="notice" id="context-instruction"></div><div class="ux-stage-line"><span id="ux-page-status" aria-live="polite">Preenchimento</span><span class="ux-stage-meter"><span id="ux-meter" style="width:0%"></span></span></div><div class="ux-compact-guide" id="ux-compact-guide" role="status" aria-live="polite">Responda os dois grupos exibidos. Use <strong>Próximos grupos</strong> para continuar.</div><div id="groups"></div><div class="ux-nav-tip" id="ux-nav-tip">Você pode voltar para conferir ou alterar escolhas.</div><div class="bar-actions"><button class="btn alt" id="back">Voltar</button><button class="btn" id="next" disabled>Próximo</button></div></section>
+<div class="ux-transition" id="ux-transition" hidden role="dialog" aria-modal="true" aria-labelledby="ux-transition-heading"><div class="ux-dialog"><div class="ux-icon">↔</div><span class="pill">Parte 2 de 2 · E (Exigido)</span><h2 id="ux-transition-heading">Agora a referência mudou</h2><p>Você concluiu as escolhas sobre seu <b>comportamento habitual (H)</b>. Agora verá as mesmas palavras novamente, mas deverá responder a outra pergunta:</p><div class="ux-switch"><b>O que você percebe que seu ambiente de trabalho espera de você?</b><div>Considere as expectativas do trabalho atual, e não o que você costuma fazer espontaneamente.</div></div><p class="small">As escolhas anteriores permanecerão registradas. Você poderá voltar para revisá-las.</p><div class="bar-actions"><button type="button" class="btn alt" id="ux-transition-cancel">Voltar para H</button><button type="button" class="btn" id="ux-transition-confirm">Entendi, responder E</button></div></div></div>
+<section id="results" class="hide">
+<div class="report-candidate-shell"><div id="one-page-report" class="one-page-report" aria-label="Relatório Perfil Z para impressão A4"></div><div class="candidate-actions not-print"><button type="button" class="btn" id="candidate-print">Imprimir / salvar PDF A4</button><button type="button" class="btn alt" id="candidate-export">Baixar JSON</button><button type="button" class="btn alt" id="candidate-restart">Refazer avaliação</button></div></div>
+<div class="panel"><span class="pill">Resultados · Perfil Z PSCA</span><h1 id="result-name">Seu mapa de tendências</h1><div class="pill-lead" id="dominants"></div><p class="muted" id="confidence-note"></p><div class="summary-callout" id="saldo-note"></div><h2>Perfil habitual (H)</h2><p class="muted">Pontos relativos calculados a partir das suas escolhas. Não representa porcentagem literal da personalidade.</p><div id="h-bars"></div></div>
+<div class="panel"><h2>Perfil isolado — H × E</h2><p class="muted">Saldo de escolhas MAIS − MENOS de cada perfil, em escala de −20 a +20. A linha zero separa saldos positivos e negativos.</p><div class="isolated-legend"><span><i class="legend-mark" style="background:#6e3d94"></i>H · Habitual</span><span><i class="legend-mark" style="background:#d44860"></i>E · Exigido</span></div><div id="isolated-chart"></div><p class="footnote">Um saldo positivo significa que a característica do perfil foi escolhida mais vezes como MAIS do que como MENOS; um saldo negativo não significa ausência de capacidade. E mede exigências percebidas, não desempenho ou desgaste.</p><h3>Comparação dos saldos</h3><div class="table-wrap"><table><thead><tr><th>Perfil</th><th class="num">Saldo H</th><th class="num">Saldo E</th><th class="num">E − H</th></tr></thead><tbody id="isolated-table"></tbody></table></div><h3>Comparação percentual</h3><div class="table-wrap"><table><thead><tr><th>Perfil</th><th class="num">H</th><th class="num">E</th><th class="num">E − H</th></tr></thead><tbody id="comparison-table"></tbody></table></div><p class="footnote">Os percentuais são distribuições relativas calculadas com MAIS=3, neutro=1 e MENOS=0. Cada contexto soma 100%. Eles não são equivalentes aos saldos nem medem uma porcentagem literal da personalidade.</p></div>
+<div class="panel"><h2>Leitura descritiva PSCA</h2><p class="muted">Interpretação exploratória baseada em seus saldos H, sem pontuação separada dos 16 núcleos.</p><div id="profile-reading"></div><h3>H e E: duas perspectivas</h3><p id="context-reading"></p><h3>Perguntas para reflexão</h3><p>Em quais situações você percebe essas tendências? Quando o ambiente pede comportamentos diferentes, o que muda na sua maneira de agir? Que estratégias de comunicação ajudam você e as pessoas com quem convive?</p><p class="footnote">Os perfis representam tendências relativas às opções deste questionário, não competências, diagnóstico, personalidade em porcentagens ou critérios isolados de seleção profissional.</p></div>
+<div class="panel"><h2>Auditoria de respostas</h2><table><thead><tr><th>Perfil</th><th class="num">H Mais</th><th class="num">H Menos</th><th class="num">E Mais</th><th class="num">E Menos</th></tr></thead><tbody id="audit-table"></tbody></table><p class="footnote">Pontuação de cada grupo: Mais = 3 pontos, não escolhida = 1 ponto, Menos = 0 ponto. Há 5 pontos distribuídos entre os quatro perfis por grupo, somando 100 pontos em cada módulo de 20 grupos.</p><div class="bar-actions not-print"><button id="json" class="btn">Baixar JSON completo</button><button id="print" class="btn alt">Imprimir / salvar PDF</button><button id="restart" class="btn alt">Refazer</button></div></div>
+</section>
+</main><script>
+'use strict';
+const VERSION='MCU-3.1-PSCA-prepublicacao-2026-11-08';
+const SCHEMA_VERSION='psca-1';
+const WORD_BANK_VERSION='mcu31-80-original';
+const HELP_TEXT_VERSION='psca-cp6-v03';
+const REPORT_VERSION='psca-cp6-v03';
+const ITEMS=[{"id":"B01","options":{"P":"Decidido","S":"Comunicativo","C":"Paciente","A":"Analítico"}},{"id":"B02","options":{"P":"Ousado","S":"Expressivo","C":"Tranquilo","A":"Preciso"}},{"id":"B03","options":{"P":"Objetivo","S":"Entusiasmado","C":"Compreensivo","A":"Criterioso"}},{"id":"B04","options":{"P":"Determinado","S":"Espontâneo","C":"Cooperativo","A":"Detalhista"}},{"id":"B05","options":{"P":"Assertivo","S":"Persuasivo","C":"Acolhedor","A":"Racional"}},{"id":"B06","options":{"P":"Proativo","S":"Animado","C":"Leal","A":"Lógico"}},{"id":"B07","options":{"P":"Resoluto","S":"Envolvente","C":"Tolerante","A":"Rigoroso"}},{"id":"B08","options":{"P":"Direto","S":"Conversador","C":"Sereno","A":"Observador"}},{"id":"B09","options":{"P":"Ágil","S":"Expansivo","C":"Constante","A":"Meticuloso"}},{"id":"B10","options":{"P":"Firme","S":"Desinibido","C":"Empático","A":"Organizado"}},{"id":"B11","options":{"P":"Corajoso","S":"Otimista","C":"Atencioso","A":"Investigativo"}},{"id":"B12","options":{"P":"Independente","S":"Carismático","C":"Confiável","A":"Sistemático"}},{"id":"B13","options":{"P":"Autônomo","S":"Inspirador","C":"Solidário","A":"Exato"}},{"id":"B14","options":{"P":"Enérgico","S":"Extrovertido","C":"Estável","A":"Técnico"}},{"id":"B15","options":{"P":"Pragmático","S":"Criativo","C":"Prestativo","A":"Reflexivo"}},{"id":"B16","options":{"P":"Iniciativo","S":"Bem-humorado","C":"Amigável","A":"Atento"}},{"id":"B17","options":{"P":"Arrojado","S":"Influente","C":"Cordial","A":"Estruturado"}},{"id":"B18","options":{"P":"Persistente","S":"Descontraído","C":"Fiel","A":"Metódico"}},{"id":"B19","options":{"P":"Competitivo","S":"Estimulante","C":"Moderado","A":"Crítico"}},{"id":"B20","options":{"P":"Focado em resultados","S":"Efusivo","C":"Pacificador","A":"Precavido"}}];
+const HELP={"B01":{"P":"Toma uma decisão quando precisa escolher um caminho.","S":"Compartilha ideias e informações com facilidade.","C":"Procura respeitar o tempo de outras pessoas antes de cobrar uma resposta ou mudança.","A":"Examina informações antes de chegar a uma conclusão."},"B02":{"P":"Demonstra disposição para experimentar caminhos desafiadores mesmo com incertezas.","S":"Demonstra o que pensa ou sente de maneira visível.","C":"Costuma manter um ritmo calmo nas situações.","A":"Procura conferir dados e detalhes para reduzir imprecisões."},"B03":{"P":"Vai direto ao ponto que considera principal.","S":"Demonstra animação diante de atividades ou ideias.","C":"Procura entender os motivos e sentimentos dos outros.","A":"Usa critérios definidos para avaliar alternativas."},"B04":{"P":"Mantém o foco em alcançar o que decidiu fazer.","S":"Age ou se expressa com naturalidade, sem planejar tudo antes.","C":"Participa de tarefas em conjunto com outras pessoas.","A":"Observa aspectos pequenos de uma tarefa ou situação."},"B05":{"P":"Costuma expressar sua posição com clareza e firmeza, mesmo diante de divergências.","S":"Procura apresentar ideias de modo a conquistar o interesse ou a adesão de outras pessoas.","C":"Recebe e escuta as pessoas com atenção.","A":"Costuma recorrer a razões, evidências e critérios ao avaliar situações."},"B06":{"P":"Toma iniciativa antes de receber uma solicitação.","S":"Demonstra disposição e energia nas interações.","C":"Valoriza preservar vínculos e dar continuidade às relações com pessoas e grupos.","A":"Prefere examinar a coerência entre as etapas de um raciocínio."},"B07":{"P":"Decide como agir e segue com o encaminhamento.","S":"Procura incluir outras pessoas em conversas, ideias ou atividades.","C":"Procura ouvir e considerar posições diferentes antes de buscar entendimento.","A":"Prefere verificar se critérios ou padrões previamente definidos estão sendo seguidos."},"B08":{"P":"Diz o que precisa de maneira clara, sem muitos rodeios.","S":"Costuma iniciar ou manter conversas com facilidade.","C":"Prefere lidar com situações em um ritmo tranquilo e previsível.","A":"Presta atenção ao que acontece ao seu redor."},"B09":{"P":"Tende a encaminhar ações rapidamente quando identifica algo a resolver.","S":"Demonstra abertura para interagir com várias pessoas.","C":"Mantém um ritmo de atuação semelhante ao longo do tempo.","A":"Confere cuidadosamente etapas e detalhes de uma tarefa."},"B10":{"P":"Sustenta sua posição mesmo diante de discordâncias.","S":"Expressa-se sem muita vergonha em situações sociais.","C":"Procura considerar o ponto de vista e os sentimentos das outras pessoas.","A":"Dispõe tarefas e informações de maneira ordenada."},"B11":{"P":"Demonstra disposição para enfrentar dificuldades mesmo quando há receio.","S":"Costuma comunicar possibilidades com entusiasmo e expectativa positiva.","C":"Demonstra atenção às necessidades de outras pessoas.","A":"Busca informações para compreender melhor uma questão."},"B12":{"P":"Prefere realizar escolhas ou tarefas com autonomia.","S":"Costuma se aproximar das pessoas de maneira expressiva e receptiva.","C":"Prefere relações sustentadas por constância, previsibilidade e continuidade.","A":"Segue uma sequência ou método para realizar tarefas."},"B13":{"P":"Conduz suas atividades sem depender de orientação constante.","S":"Procura entusiasmar outras pessoas ao compartilhar ideias ou possibilidades.","C":"Oferece apoio a quem está enfrentando uma dificuldade.","A":"Procura conferir informações para evitar diferenças ou inconsistências."},"B14":{"P":"Age com vigor e disposição ao executar atividades.","S":"Costuma buscar e valorizar oportunidades de contato e interação social.","C":"Prefere manter continuidade e previsibilidade mesmo diante de mudanças.","A":"Prefere seguir procedimentos e critérios técnicos definidos ao executar tarefas."},"B15":{"P":"Prefere soluções que possam ser aplicadas na prática.","S":"Gosta de explorar ideias e maneiras diferentes de realizar atividades.","C":"Dispõe-se a ajudar quando alguém precisa.","A":"Dedica tempo a pensar antes de chegar a uma posição."},"B16":{"P":"Tende a dar o primeiro passo quando percebe que uma situação precisa avançar.","S":"Costuma usar humor e leveza nas interações.","C":"Relaciona-se com as pessoas de maneira cordial e próxima.","A":"Percebe informações e mudanças durante uma atividade."},"B17":{"P":"Aceita desafios que exigem sair do caminho habitual.","S":"Busca apresentar ideias e incentivar a participação ou o envolvimento de outras pessoas.","C":"Trata as pessoas com educação e gentileza.","A":"Organiza atividades conforme uma estrutura ou plano."},"B18":{"P":"Continua tentando mesmo quando encontra dificuldades.","S":"Interage de maneira informal e pouco rígida.","C":"Valoriza manter vínculos e compromissos ao longo do tempo.","A":"Executa tarefas seguindo etapas previamente definidas."},"B19":{"P":"Costuma se motivar com metas desafiadoras e referências de resultado.","S":"Procura estimular a participação ou o interesse de outras pessoas.","C":"Prefere agir com equilíbrio e evitar mudanças bruscas quando há alternativas.","A":"Costuma questionar premissas e examinar informações antes de aceitá-las."},"B20":{"P":"Costuma direcionar ações para objetivos e resultados definidos.","S":"Expressa emoções ou entusiasmo de modo intenso.","C":"Procura diminuir conflitos e aproximar posições.","A":"Considera possíveis riscos antes de agir."}};
+const PROFILES=['P','S','C','A'];
+const LABEL={P:'Prático',S:'Sociável',C:'Constante',A:'Analítico'};
+const COLOR={P:'#cc2944',S:'#e2a200',C:'#11996e',A:'#316bd6'};
+let responses={H:Array.from({length:20},()=>({more:null,less:null})),E:Array.from({length:20},()=>({more:null,less:null}))};
+let page=0, name='',result=null;
+let importedMode=false;
+
+// Leitura não destrutiva: mantém arquivo legado bruto e projeta códigos para visualização.
+const LEGACY_CODE_MAP=Object.freeze({P:'P',S:'S',C:'C',M:'A'});
+function projectLegacyResult(raw){
+ if(!raw||typeof raw!=='object')throw Error('Arquivo de resultado inválido.');
+ const legacy=Boolean(raw.scores?.H && Object.prototype.hasOwnProperty.call(raw.scores.H.points||{},'M'));
+ const codeMap=legacy?LEGACY_CODE_MAP:{P:'P',S:'S',C:'C',A:'A'};
+ const mapRec=o=>Object.fromEntries(Object.entries(o||{}).map(([k,v])=>[codeMap[k]||k,v]));
+ const mapScore=o=>o?{...o,more:mapRec(o.more),less:mapRec(o.less),points:mapRec(o.points),balance:mapRec(o.balance)}:null;
+ const codes=(raw.dominance?.codes||[]).map(k=>codeMap[k]||k);
+ return {source_version:raw.version||null,source_schema:legacy?'legacy-pscm':'psca-1',source_codes:legacy?'P/S/C/M':'P/S/C/A',source_file_unchanged:true,
+ display_labels:LABEL, scores:{H:mapScore(raw.scores?.H),E:mapScore(raw.scores?.E)},dominance:{codes,rule:raw.dominance?.rule||null},original:raw};
+}
+
+const $=id=>document.getElementById(id);
+const pct=x=>x.toFixed(1).replace('.',',')+'%';
+const show=(id)=>{['intro','assessment','results'].forEach(k=>$(k).classList.toggle('hide',k!==id));};
+// Ordens fixas reprodutíveis dentro de H e E, sem exibir as associações.
+function mix(x){x=(x^61)^(x>>>16);x=Math.imul(x,9);x=x^(x>>>4);x=Math.imul(x,0x27d4eb2d);return (x^(x>>>15))>>>0;}
+function orderedOptions(i,ctx){return PROFILES.map((p,j)=>({p,txt:ITEMS[i].options[p],seed:mix((i+1)*3709+(ctx==='E'?90001:1)+j*10007)})).sort((a,b)=>a.seed-b.seed);}
+function ctxOfPage(n){return n<4?'H':'E';}
+function groupIndices(n){return Array.from({length:5},(_,j)=>(n%4)*5+j);}
+function isCompletePage(){const ctx=ctxOfPage(page);return groupIndices(page).every(i=>responses[ctx][i].more&&responses[ctx][i].less);}
+function render(){show('assessment');const ctx=ctxOfPage(page);const nr=page%4+1;$('context-chip').textContent=(ctx==='H'?'H · Habitual':'E · Exigido');$('question-head').textContent=ctx==='H'?'Como você costuma agir?':'Como o ambiente espera que você aja?';$('counter').textContent='Página '+nr+' de 4 · '+(ctx==='H'?'Parte 1 de 2':'Parte 2 de 2');$('prog').style.width=((page+1)/8*100)+'%';$('context-instruction').textContent=ctx==='H'?'Pense em seu comportamento habitual, não em como gostaria de ser. Leia as descrições e marque MAIS e MENOS em cada grupo.':'Agora responda sobre o que o ambiente atual espera de você, mesmo quando isso difere do seu jeito natural. Leia as descrições e marque MAIS e MENOS em cada grupo.';
+const root=$('groups');root.replaceChildren();for(const i of groupIndices(page)){const obj=responses[ctx][i];const box=document.createElement('div');box.className='group';const head=document.createElement('div');head.className='group-head';head.textContent='Grupo '+(i+1)+' de 20';box.append(head);const opts=document.createElement('div');opts.className='options';for(const entry of orderedOptions(i,ctx)){const row=document.createElement('div');row.className='option';const wordBox=document.createElement('div');wordBox.className='word-box';const word=document.createElement('span');word.className='word';word.textContent=entry.txt;const help=document.createElement('span');help.className='word-help';help.textContent=HELP[ITEMS[i].id][entry.p];wordBox.append(word,help);row.append(wordBox);const buttons=document.createElement('div');buttons.className='choices';for(const kind of ['more','less']){const button=document.createElement('button');button.type='button';button.className='choice '+kind+(obj[kind]===entry.p?' sel':'');button.textContent=kind==='more'?'MAIS':'MENOS';button.setAttribute('aria-pressed',String(obj[kind]===entry.p));button.setAttribute('aria-label',(kind==='more'?'Mais':'Menos')+' representa: '+entry.txt);button.onclick=()=>{obj[kind]=obj[kind]===entry.p?null:entry.p;const other=kind==='more'?'less':'more';if(obj[other]===entry.p)obj[other]=null;render();};buttons.append(button);}row.append(buttons);opts.append(row);}box.append(opts);root.append(box);}
+$('back').textContent=page===0?'Voltar ao início':'Voltar';$('next').textContent=page===7?'Ver meu resultado':'Próximo';$('next').disabled=!isCompletePage();}
+// Cada quarteto distribui: MAIS=3, duas neutras=1 cada e MENOS=0; total = 5 pontos.
+// Vinte quartetos x 5 pontos = 100 pontos. Logo os pontos de cada dimensão são também %.
+function score(ctx){const more={P:0,S:0,C:0,A:0},less={P:0,S:0,C:0,A:0};for(const r of responses[ctx]){if(!PROFILES.includes(r.more)||!PROFILES.includes(r.less)||r.more===r.less)throw Error('Resposta incompleta ou inválida.');more[r.more]++;less[r.less]++;}
+const points=Object.fromEntries(PROFILES.map(p=>[p,20+2*more[p]-less[p]]));const balance=Object.fromEntries(PROFILES.map(p=>[p,more[p]-less[p]]));if(PROFILES.reduce((s,p)=>s+points[p],0)!==100||PROFILES.reduce((s,p)=>s+balance[p],0)!==0)throw Error('Erro na soma do motor.');return {more,less,points,balance};}
+// Perfis dominantes: todo saldo H estritamente positivo entra, ordenado do maior para o menor.
+// Como os quatro saldos somam zero, podem existir 1, 2 ou 3 positivos; se todos zero,
+// o resultado é equilibrado e não forçamos uma classificação.
+function dominantProfiles(s){const order=PROFILES.slice().sort((a,b)=>s.balance[b]-s.balance[a]||PROFILES.indexOf(a)-PROFILES.indexOf(b));const codes=order.filter(p=>s.balance[p]>0);return {codes,ambiguous:codes.length===0,order,rule:'saldo H > 0'};}
+const SVGNS='http://www.w3.org/2000/svg';
+function svgEl(tag,attrs={},textValue){const el=document.createElementNS(SVGNS,tag);for(const [key,value] of Object.entries(attrs))el.setAttribute(key,String(value));if(textValue!==undefined)el.textContent=String(textValue);return el;}
+function sign(n){return n>0?'+'+n:String(n);}
+// Gráfico original da MCU: eixo do saldo natural, −20 a +20, sem transformação de escala.
+function renderIsolated(H,E){const root=$('isolated-chart');root.replaceChildren();const w=760,h=345,left=56,right=22,top=24,bottom=72;
+ const plotW=w-left-right,plotH=h-top-bottom;
+ const x=i=>left+plotW*i/3;
+ const y=v=>top+(20-v)*plotH/40;
+ const svg=svgEl('svg',{viewBox:`0 0 ${w} ${h}`,class:'isolated-chart',role:'img','aria-label':'Gráfico de perfil isolado: linhas dos saldos habituais e exigidos para Prático, Sociável, Constante e Analítico'});
+ for(const t of [-20,-10,0,10,20]){const cy=y(t);svg.append(svgEl('line',{x1:left,y1:cy,x2:w-right,y2:cy,stroke:t===0?'#596f86':'#e1e8f0','stroke-width':t===0?2:1,'stroke-dasharray':t===0?'6 5':'none'}));svg.append(svgEl('text',{x:left-12,y:cy+5,'text-anchor':'end',fill:'#68798d','font-size':13},t));}
+ PROFILES.forEach((p,i)=>{svg.append(svgEl('line',{x1:x(i),y1:top,x2:x(i),y2:y(-20),stroke:'#f0f3f7'}));svg.append(svgEl('text',{x:x(i),y:h-27,'text-anchor':'middle',fill:COLOR[p],'font-size':14,'font-weight':700},LABEL[p]));});
+ for(const [s,color,marker] of [[H,'#6e3d94','circle'],[E,'#d44860','rect']]){
+  const pts=PROFILES.map((p,i)=>[x(i),y(s.balance[p]),s.balance[p]]);
+  svg.append(svgEl('polyline',{points:pts.map(v=>`${v[0]},${v[1]}`).join(' '),fill:'none',stroke:color,'stroke-width':3.5,'stroke-linejoin':'round','stroke-linecap':'round'}));
+  pts.forEach(([cx,cy,val],i)=>{const mark=marker==='circle'?svgEl('circle',{cx,cy,r:7.2,fill:color,stroke:'#fff','stroke-width':2}):svgEl('rect',{x:cx-7,y:cy-7,width:14,height:14,rx:3,fill:color,stroke:'#fff','stroke-width':2});mark.append(svgEl('title',{},`${LABEL[PROFILES[i]]} · ${s===H?'H':'E'}: ${sign(val)}`));svg.append(mark);});
+ }
+ root.append(svg);
+}
+function barHtml(label,value,color){const div=document.createElement('div');div.className='score-row';const head=document.createElement('div');head.className='score-head';const title=document.createElement('b');title.textContent=label;const n=document.createElement('span');n.textContent=pct(value);head.append(title,n);const track=document.createElement('div');track.className='track';const fill=document.createElement('div');fill.className='fill';fill.style.width=value+'%';fill.style.background=color;track.append(fill);div.append(head,track);return div;}
+function fillTr(tbody,arr){const tr=document.createElement('tr');arr.forEach((s,i)=>{const td=document.createElement('td');td.textContent=s;if(i>0)td.className='num';tr.append(td)});tbody.append(tr);}
+
+const PROFILE_READING={
+ P:'O Prático descreve orientação para iniciativa, decisões, posicionamento direto e encaminhamento de desafios. Isso não comprova liderança ou produtividade.',
+ S:'O Sociável descreve orientação para interação, expressão, entusiasmo e participação. Isso não garante carisma, criatividade ou persuasão.',
+ C:'O Constante descreve preferência por cooperação, continuidade, consideração e previsibilidade. Isso não implica passividade ou resistência inevitável a mudanças.',
+ A:'O Analítico descreve preferência por análise, critérios, conferência e método. Isso não comprova formação técnica, inteligência superior ou ausência de erros.'
+};
+function renderReading(H,E){
+ const root=$('profile-reading');root.replaceChildren();
+ const dom=dominantProfiles(H);
+ if(dom.ambiguous){const p=document.createElement('p');p.textContent='Todos os saldos habituais são zero: não há perfil dominante nesta aplicação.';root.append(p);}
+ for(const p of PROFILES){
+ const section=document.createElement('section');section.className='reading-item';
+ const h=document.createElement('h3');h.textContent=LABEL[p]+' · saldo H '+sign(H.balance[p]);
+ const desc=document.createElement('p');
+ const prefix=H.balance[p]>0?'Este perfil teve mais escolhas MAIS do que MENOS no habitual. ':H.balance[p]===0?'As escolhas MAIS e MENOS se equilibraram para este perfil. ':'Este perfil teve relativamente mais escolhas MENOS do que MAIS no habitual. ';
+ desc.textContent=prefix+PROFILE_READING[p];section.append(h,desc);root.append(section);
+ }
+ const compare=PROFILES.map(p=>LABEL[p]+': saldo H '+sign(H.balance[p])+', E '+sign(E.balance[p])).join(' · ');
+ $('context-reading').textContent='A perspectiva H descreve como você se percebe habitualmente; E descreve o que percebe como esperado pelo ambiente. '+compare+'. As diferenças não medem estresse, adaptação ou adequação.';
+}
+
+function finish(){importedMode=false;const H=score('H'),E=score('E'),dom=dominantProfiles(H);result={version:VERSION,schema_version:SCHEMA_VERSION,word_bank_version:WORD_BANK_VERSION,help_text_version:HELP_TEXT_VERSION,report_version:REPORT_VERSION,generated_at:new Date().toISOString(),participant:{name:name||null},method:{response:'Quartetos: escolha MAIS e MENOS',profiles:LABEL,group_count_per_context:20,weighting:{more:3,neutral:1,less:0},score:'Distribuição percentual = 20 + 2×MAIS − MENOS; 100 pontos por contexto. Saldo isolado = MAIS − MENOS (−20 a +20).',dominance:'Perfis com saldo H > 0, em ordem decrescente; máximo natural de três. Se todos os saldos H = 0, resultado equilibrado sem dominante.'},items:ITEMS,answers:responses,scores:{H,E},dominance:dom};
+renderResult(H,E,dom);}
+function renderResult(H,E,dom){show('results');$('prog').style.width='100%';$('result-name').textContent=name?'Mapa comportamental de '+name:'Seu mapa de tendências';
+$('dominants').textContent=dom.ambiguous?'Resultado equilibrado — sem dominante definido':dom.codes.map(p=>LABEL[p]).join(' + ');
+$('confidence-note').textContent=dom.ambiguous?'Todos os saldos habituais ficaram em zero; não há predominância relativa definida.':dom.codes.length===1?'Um perfil teve saldo habitual positivo; os demais não apresentaram saldo positivo.':'A combinação inclui todos os perfis com saldo habitual positivo, com diferentes intensidades.';
+$('saldo-note').textContent=dom.ambiguous?'Saldos H: todos zero.':dom.codes.map(p=>LABEL[p]+' ('+sign(H.balance[p])+')').join(' · ')+'. Os perfis estão ordenados por saldo; saldos iguais representam empate, não hierarquia.';
+const root=$('h-bars');root.replaceChildren();for(const p of PROFILES)root.append(barHtml(LABEL[p],H.points[p],COLOR[p]));
+renderIsolated(H,E);renderReading(H,E);
+if(importedMode){$('confidence-note').textContent='Resultado importado de arquivo JSON e calculado novamente a partir das respostas. '+$('confidence-note').textContent;} 
+const tb=$('comparison-table');tb.replaceChildren();const iso=$('isolated-table');iso.replaceChildren();const audit=$('audit-table');audit.replaceChildren();
+for(const p of PROFILES){const delta=E.points[p]-H.points[p],deltaIso=E.balance[p]-H.balance[p];fillTr(iso,[LABEL[p],sign(H.balance[p]),sign(E.balance[p]),sign(deltaIso)]);fillTr(tb,[LABEL[p],pct(H.points[p]),pct(E.points[p]),(delta>0?'+':'')+delta+' p.p.']);fillTr(audit,[LABEL[p],String(H.more[p]),String(H.less[p]),String(E.more[p]),String(E.less[p])]);}}
+
+// Importação local: o arquivo é tratado como dado não confiável; nenhuma pontuação
+// ou nome de perfil fornecido pelo JSON é utilizado como fonte para cálculo.
+function normalizeImported(raw){
+ if(!raw || typeof raw!=='object' || Array.isArray(raw))throw Error('O arquivo não contém um resultado válido do Perfil Z ou MCU histórica.');
+ if(!raw.answers || !raw.items || !Array.isArray(raw.items) || raw.items.length!==20)throw Error('O arquivo não contém os 20 quartetos e respostas exigidos.');
+ const sourceIsLegacy=Boolean(raw.items[0]?.options && Object.prototype.hasOwnProperty.call(raw.items[0].options,'M'));
+ const map=sourceIsLegacy?LEGACY_CODE_MAP:{P:'P',S:'S',C:'C',A:'A'};
+ // Verifica correspondência literal dos 80 termos do banco original; evita importar
+ // instrumentos diferentes sob os mesmos códigos.
+ for(let i=0;i<20;i++){
+  const it=raw.items[i];if(!it || it.id!==ITEMS[i].id || !it.options || typeof it.options!=='object')throw Error('Banco de palavras incompatível no grupo '+(i+1)+'.');
+  const expected=Object.fromEntries(Object.entries(it.options).map(([k,v])=>[map[k],v]));
+  if(Object.keys(expected).length!==4 || PROFILES.some(p=>expected[p]!==ITEMS[i].options[p]))throw Error('As palavras do grupo '+(i+1)+' não correspondem ao banco homologado do Perfil Z.');
+ }
+ const answers={};
+ for(const ctx of ['H','E']){
+  if(!Array.isArray(raw.answers[ctx]) || raw.answers[ctx].length!==20)throw Error('Respostas '+ctx+' incompletas.');
+  answers[ctx]=raw.answers[ctx].map((a,i)=>{
+   if(!a || typeof a!=='object' || !Object.prototype.hasOwnProperty.call(map,a.more)||!Object.prototype.hasOwnProperty.call(map,a.less)||a.more===a.less)throw Error('Escolhas inválidas no contexto '+ctx+', grupo '+(i+1)+'.');
+   return {more:map[a.more],less:map[a.less]};
+  });
+ }
+ const compute=(rows)=>{
+  const more={P:0,S:0,C:0,A:0},less={P:0,S:0,C:0,A:0};
+  for(const r of rows){more[r.more]++;less[r.less]++;}
+  const points=Object.fromEntries(PROFILES.map(p=>[p,20+2*more[p]-less[p]]));
+  const balance=Object.fromEntries(PROFILES.map(p=>[p,more[p]-less[p]]));
+  if(PROFILES.reduce((n,p)=>n+points[p],0)!==100 || PROFILES.reduce((n,p)=>n+balance[p],0)!==0)throw Error('Inconsistência no cálculo das respostas.');
+  return {more,less,points,balance};
+ };
+ const H=compute(answers.H),E=compute(answers.E),dom=dominantProfiles(H);
+ // Exige coerência com os contadores gravados, quando fornecidos; exceção para
+ // dominância de versões antigas, cuja regra foi atualizada e é recodificada.
+ for(const ctx of ['H','E'])for(const field of ['more','less','points']){
+  const recorded=raw.scores?.[ctx]?.[field];
+  if(recorded)for(const [k,v] of Object.entries(recorded)){
+   if(!Object.prototype.hasOwnProperty.call(map,k)||!Number.isFinite(v)||v!==(ctx==='H'?H:E)[field][map[k]])throw Error('O total registrado difere das respostas em '+ctx+'/'+field+'.');
+  }
+ }
+ const participantName=typeof raw.participant?.name==='string'?raw.participant.name.slice(0,90):'';
+ const normalized={version:VERSION,schema_version:SCHEMA_VERSION,word_bank_version:WORD_BANK_VERSION,help_text_version:HELP_TEXT_VERSION,report_version:REPORT_VERSION,
+  generated_at:raw.generated_at||null,participant:{name:participantName||null},
+  method:{response:'Quartetos: escolha MAIS e MENOS',profiles:LABEL,group_count_per_context:20,weighting:{more:3,neutral:1,less:0},score:'Distribuição percentual = 20 + 2×MAIS − MENOS; 100 pontos por contexto. Saldo isolado = MAIS − MENOS (−20 a +20).',dominance:'Perfis com saldo H > 0; se todos os saldos H = 0, resultado equilibrado.'},
+  items:ITEMS,answers,scores:{H,E},dominance:dom,
+  migration:{type:sourceIsLegacy?'legacy-pscm-import':'psca-import',source_version:typeof raw.version==='string'?raw.version:null,source_codes:sourceIsLegacy?'P/S/C/M':'P/S/C/A',source_dominance:raw.dominance||null,source_generated_at:raw.generated_at||null,code_map:map,note:'Exibição recalculada das escolhas originais; nenhum escore foi aceito sem conferência.'}};
+ return {normalized,H,E,dom,participantName};
+}
+async function importResult(){
+ const status=$('import-status'),file=$('import-json').files?.[0];status.className='import-status';status.textContent='';
+ if(!file){status.classList.add('error');status.textContent='Selecione primeiro um arquivo JSON.';return;}
+ if(file.size>1024*1024){status.classList.add('error');status.textContent='Arquivo maior que 1 MB. Verifique se é um resultado compatível do Perfil Z.';return;}
+ try{
+  const parsed=JSON.parse(await file.text());const x=normalizeImported(parsed);
+  name=x.participantName;result=x.normalized;responses=x.normalized.answers;importedMode=true;renderResult(x.H,x.E,x.dom);
+  status.classList.add('ok');status.textContent='Arquivo importado e validado.';
+  window.scrollTo(0,0);
+ }catch(e){status.classList.add('error');status.textContent='Não foi possível importar: '+e.message;}
+}
+$('import-button').onclick=importResult;
+$('import-json').addEventListener('change',()=>{$('import-status').textContent='';});
+$('start').onclick=()=>{name=$('participant').value.trim();page=0;render();window.scrollTo(0,0);};$('back').onclick=()=>{if(page===0){show('intro');$('prog').style.width='0%';}else{page--;render();}window.scrollTo(0,0);};$('next').onclick=()=>{if(!isCompletePage())return;if(page<7){page++;render();}else{try{finish();}catch(e){alert('Não foi possível calcular: '+e.message);}}window.scrollTo(0,0);};
+$('json').onclick=()=>{if(!result)return;const blob=new Blob([JSON.stringify(result,null,2)],{type:'application/json;charset=utf-8'});const url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='MCU_3_1_PSCA_resultados_'+new Date().toISOString().slice(0,10)+'.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);};$('print').onclick=()=>window.print();$('restart').onclick=()=>{if(!confirm('Refazer a avaliação apagará as respostas atuais da tela. Deseja continuar?'))return;responses={H:Array.from({length:20},()=>({more:null,less:null})),E:Array.from({length:20},()=>({more:null,less:null}))};page=0;result=null;show('intro');$('prog').style.width='0%';window.scrollTo(0,0);};
+
+// --- Renderização candidata A4. Os cálculos e os arquivos originais NÃO são modificados. ---
+const REPORT_TEXTS = {"H-P-C": "Pode tomar iniciativa e buscar encaminhamentos diante de desafios.", "H-P-F": "Pode contribuir para dar andamento às atividades e definir próximos passos.", "H-P-A": "Pode decidir rapidamente sem considerar todas as perspectivas relevantes.", "H-S-C": "Pode buscar interação, expressar ideias e participar de conversas.", "H-S-F": "Pode incentivar a participação de outras pessoas em iniciativas.", "H-S-A": "Pode se dispersar entre novidades e adiar a conclusão de algumas tarefas.", "H-C-C": "Pode valorizar cooperação, continuidade e relações de confiança.", "H-C-F": "Pode contribuir para manter acordos e dar continuidade ao trabalho coletivo.", "H-C-A": "Pode adiar conversas difíceis ao tentar preservar a harmonia.", "H-A-C": "Pode preferir examinar informações e utilizar critérios claros.", "H-A-F": "Pode ajudar a identificar detalhes e inconsistências nas informações.", "H-A-A": "Pode prolongar verificações mesmo quando já há base para decidir.", "E-P-1": "Você percebe uma expectativa de tomar iniciativa diante das demandas.", "E-P-2": "Você percebe necessidade de tomar decisões e encaminhar ações com rapidez.", "E-P-3": "Você percebe maior exigência de enfrentar obstáculos e desafios.", "E-S-1": "Você percebe expectativa de interagir e trocar ideias com frequência.", "E-S-2": "Você percebe necessidade de comunicar ideias com espontaneidade.", "E-S-3": "Você percebe expectativa de envolver outras pessoas nas iniciativas.", "E-C-1": "Você percebe expectativa de cooperar e apoiar outras pessoas.", "E-C-2": "Você percebe necessidade de manter continuidade nas atividades.", "E-C-3": "Você percebe expectativa de escuta e entendimento nas relações.", "E-A-1": "Você percebe necessidade de fundamentar decisões com critérios claros.", "E-A-2": "Você percebe expectativa de conferir informações com cuidado.", "E-A-3": "Você percebe necessidade de seguir métodos e considerar riscos."};
+const REPORT_DISPLAY_VERSION='mcu-7a-finalizacao-a4-v02';
+function renderCandidateA4(H,E,dom){
+  const root=$('one-page-report');root.replaceChildren();
+  const hCodes=dom.codes.slice();const hNeutral=dom.ambiguous;
+  const envTop=Math.max(...PROFILES.map(p=>E.balance[p]));
+  const eCodes=envTop>0?PROFILES.filter(p=>E.balance[p]===envTop):[];
+  const d=document.createElement('div'); d.className='r-header';
+  const t=document.createElement('div');const nameLine=document.createElement('h1');nameLine.textContent='Seu perfil comportamental';
+  const sub=document.createElement('p');sub.textContent=(name||'Participante')+' · Perfil Z PSCA · '+(result?.generated_at?new Date(result.generated_at).toLocaleDateString('pt-BR'):'Avaliação local');
+  t.append(nameLine,sub);const logo=document.createElement('div');logo.className='r-mark';logo.textContent='Perfil Z · PSCA';d.append(t,logo);root.append(d);
+  const contexts=document.createElement('div');contexts.className='r-contexts';
+  const makeContext=(title,label,codes,data,isH)=>{const card=document.createElement('div');card.className='r-card';const tag=document.createElement('div');tag.className='r-label';tag.textContent=title;const main=document.createElement('div');main.className='r-emphasis';main.textContent=codes.length?codes.map(p=>LABEL[p]).join(' + '):(isH?'Sem predominância definida':'Sem maior ênfase definida');card.append(tag,main);for(const p of PROFILES){const line=document.createElement('div');line.className='r-barline';const code=document.createElement('span');code.className='r-code';code.textContent=p;const track=document.createElement('div');track.className='r-barbg';const fill=document.createElement('div');fill.className='r-barfill';fill.style.background=COLOR[p];fill.style.width=data.points[p]+'%';track.append(fill);const val=document.createElement('span');val.className='r-number';val.textContent=data.points[p]+' pts';line.append(code,track,val);card.append(line)}return card;};
+  contexts.append(makeContext('H · Como você tende a agir',null,hCodes,H,true),makeContext('E · Exigências percebidas',null,eCodes,E,false));root.append(contexts);
+  const profilesBox=document.createElement('section');profilesBox.className='r-box';const title=document.createElement('h2');title.className='r-section-title';title.textContent='Suas características, pontos fortes e pontos de atenção';profilesBox.append(title);
+  const expl=document.createElement('p');expl.className='r-intro';expl.textContent=hNeutral?'Referências gerais dos quatro perfis — não representam dominâncias individuais.':'Possibilidades associadas aos perfis destacados nas suas escolhas habituais.';profilesBox.append(expl);
+  const list=hNeutral?PROFILES:hCodes;
+  for(const p of list){const item=document.createElement('div');item.className='r-trait-row';const pname=document.createElement('div');pname.className='r-profile-name';pname.textContent=LABEL[p];pname.style.color=COLOR[p];const triad=document.createElement('div');triad.className='r-triad';
+    for(const [k,label] of [['C','Característica'],['F','Ponto forte potencial'],['A','Ponto de atenção']]){const line=document.createElement('div');const bold=document.createElement('b');bold.textContent=label+': ';line.append(bold,document.createTextNode(REPORT_TEXTS['H-'+p+'-'+k]));triad.append(line)}item.append(pname,triad);profilesBox.append(item)}root.append(profilesBox);
+  const eBox=document.createElement('section');eBox.className='r-box';const eTitle=document.createElement('h2');eTitle.className='r-section-title';eTitle.textContent='Exigências percebidas no ambiente de trabalho';eBox.append(eTitle);const items=[];
+  if(eCodes.length===1){for(let i=1;i<=3;i++)items.push(REPORT_TEXTS['E-'+eCodes[0]+'-'+i]);}
+  else if(eCodes.length===2){items.push(...eCodes.map(p=>REPORT_TEXTS['E-'+p+'-1']),'Suas escolhas destacaram igualmente essas duas orientações de exigência percebida.');}
+  else if(eCodes.length===3){items.push(...eCodes.map(p=>REPORT_TEXTS['E-'+p+'-1']));}
+  else{items.push('Suas escolhas não destacaram uma orientação específica de exigência do ambiente.');}
+  const ul=document.createElement('ul');ul.className='r-elist';items.forEach(txt=>{const li=document.createElement('li');li.textContent=txt;ul.append(li)});eBox.append(ul);root.append(eBox);
+  const summary=document.createElement('div');summary.className='r-summary';const b=document.createElement('b');b.textContent='Habitual × Exigido: ';summary.append(b,document.createTextNode((hNeutral?'H não apresenta predominância definida':'H destaca '+hCodes.map(p=>LABEL[p]).join(' + '))+'; '+(eCodes.length?'E destaca '+eCodes.map(p=>LABEL[p]).join(' + '):'E não apresenta maior ênfase definida')+'. As duas leituras mostram contextos diferentes, não desempenho ou desgaste.'));root.append(summary);
+  const footer=document.createElement('div');footer.className='r-footer';footer.textContent='Os pontos são relativos às escolhas (100 por contexto). H = habitual; E = exigências percebidas. As características e os pontos de atenção são possibilidades associadas aos perfis, não capacidades ou comportamentos medidos individualmente. Versão de apresentação: '+REPORT_DISPLAY_VERSION+'.';root.append(footer);
+}
+const _renderResultBeforeCandidate=renderResult;
+renderResult=function(H,E,dom){_renderResultBeforeCandidate(H,E,dom);renderCandidateA4(H,E,dom);};
+$('candidate-print').onclick=()=>window.print();
+$('candidate-export').onclick=()=>$('json').click();
+$('candidate-restart').onclick=()=>$('restart').click();
+
+
+// 7B: somente camada de experiência. Mantém score(), dominantProfiles(), os dados e a exportação JSON idênticos.
+const uxRenderOriginal=render;
+render=function(){
+ uxRenderOriginal();
+ const ctx=ctxOfPage(page);
+ $('assessment').setAttribute('data-context',ctx);
+ const all=groupIndices(page), done=all.filter(i=>responses[ctx][i].more&&responses[ctx][i].less).length;
+ $('ux-page-status').textContent='Página '+(page+1)+' de 8 · '+done+' de 5 grupos completos';
+ $('ux-meter').style.width=(done/5*100)+'%';
+ const boxes=$('groups').querySelectorAll('.group');
+ boxes.forEach((box,j)=>{
+  const filled=!!(responses[ctx][all[j]].more&&responses[ctx][all[j]].less);
+  box.dataset.complete=String(filled);
+  const marker=document.createElement('span');marker.className='ux-complete';
+  marker.textContent=filled?'✓ Completo':'Pendente';
+  box.querySelector('.group-head').append(marker);
+ });
+ $('next').textContent=page===7?'Ver meu resultado':page===3?'Avançar para E':'Próxima página';
+};
+const uxNextOriginal=$('next').onclick;
+$('next').onclick=()=>{
+ if(!isCompletePage())return;
+ if(page===3){
+  $('ux-transition').hidden=false;
+  $('ux-transition-confirm').focus();
+  return;
+ }
+ uxNextOriginal();
+};
+$('ux-transition-confirm').onclick=()=>{
+ $('ux-transition').hidden=true;
+ page=4;render();window.scrollTo(0,0);
+};
+$('ux-transition-cancel').onclick=()=>{
+ $('ux-transition').hidden=true;
+ $('next').focus();
+};
+
+// 7B v0.2: mostra grupos em pares, preservando 8 páginas lógicas, 40 quartetos e as funções do motor.
+// A base de respostas e os dados continuam exclusivamente na memória da sessão aberta.
+let uxPair=0;
+const uxSegments=[[0,1],[2,3],[4]];
+const uxPairRenderBefore=render;
+function uxPairComplete(){const ctx=ctxOfPage(page);return uxSegments[uxPair].every(slot=>{const i=groupIndices(page)[slot];return !!(responses[ctx][i].more&&responses[ctx][i].less)});}
+function uxVisibleGroupCount(){return uxSegments[uxPair].length;}
+render=function(){
+ uxPairRenderBefore();
+ const all=groupIndices(page),ctx=ctxOfPage(page),slots=uxSegments[uxPair];
+ $('groups').querySelectorAll('.group').forEach((box,j)=>{box.hidden=!slots.includes(j);});
+ const first=all[slots[0]]+1,last=all[slots[slots.length-1]]+1;
+ $('ux-compact-guide').innerHTML='<strong>Grupos '+first+(first!==last?' e '+last:'')+' de 20.</strong> Selecione uma palavra MAIS e outra MENOS em cada grupo. Leia as descrições antes de marcar.';
+ $('ux-page-status').textContent=(ctx==='H'?'Habitual':'Exigido')+' · '+(all.filter(i=>responses[ctx][i].more&&responses[ctx][i].less).length)+' de 5 respondidos nesta página · Etapa '+(uxPair+1)+' de 3';
+ $('ux-meter').style.width=(all.filter(i=>responses[ctx][i].more&&responses[ctx][i].less).length/5*100)+'%';
+ $('back').textContent=uxPair>0?'Grupos anteriores':page===0?'Voltar ao início':'Página anterior';
+ $('next').textContent=uxPair<2?'Próximos grupos':page===7?'Ver meu resultado':page===3?'Avançar para E':'Próxima página';
+ $('next').disabled=!uxPairComplete();
+ // O render original recria os botões a cada clique. Reposiciona foco no controle
+ // equivalente para evitar perda de foco durante navegação por teclado.
+ $('groups').querySelectorAll('.group').forEach((box,j)=>{
+  box.querySelectorAll('.option').forEach((option,k)=>{
+   option.querySelectorAll('button.choice').forEach((btn,b)=>{
+    const action=btn.onclick;
+    btn.onclick=()=>{action();const target=$('groups').querySelectorAll('.group')[j]?.querySelectorAll('.option')[k]?.querySelectorAll('button.choice')[b];target?.focus({preventScroll:true});};
+   });
+  });
+ });
+};
+const uxPairPreviousNext=$('next').onclick;
+$('next').onclick=()=>{
+ if(!uxPairComplete())return;
+ if(uxPair<2){uxPair++;render();$('assessment').scrollIntoView({block:'start'});$('next').focus({preventScroll:true});return;}
+ // Se a página estiver completa, executar o fluxo 7B v0.1, inclusive aviso H → E.
+ const pageBefore=page;
+ uxPairPreviousNext();
+ if(page!==pageBefore&&$('ux-transition').hidden){uxPair=0;render();}
+};
+const uxPairPreviousBack=$('back').onclick;
+$('back').onclick=()=>{
+ if(uxPair>0){uxPair--;render();$('assessment').scrollIntoView({block:'start'});$('back').focus({preventScroll:true});return;}
+ const before=page;
+ uxPairPreviousBack();
+ if(before>0){uxPair=2;render();}
+};
+const uxPairOldStart=$('start').onclick;
+$('start').onclick=()=>{uxPair=0;uxPairOldStart();};
+const uxPairOldConfirm=$('ux-transition-confirm').onclick;
+$('ux-transition-confirm').onclick=()=>{uxPair=0;uxPairOldConfirm();};
+// Transição: Escape e foco restaurado ao botão, sem alterar o estado de resposta.
+$('ux-transition').addEventListener('keydown',e=>{
+ if(e.key==='Escape'){$('ux-transition-cancel').click();e.preventDefault();}
+ if(e.key==='Tab'){
+  const focusable=[$('ux-transition-cancel'),$('ux-transition-confirm')];
+  const idx=focusable.indexOf(document.activeElement);
+  if(e.shiftKey&&idx===0){e.preventDefault();focusable[1].focus();}
+  if(!e.shiftKey&&idx===1){e.preventDefault();focusable[0].focus();}
+ }
+});
+</script></body></html>
