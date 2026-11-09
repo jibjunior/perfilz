@@ -118,6 +118,28 @@ body{background:linear-gradient(180deg,#f3f7fd,#f8fafc 460px)}
 #assessment .option{min-height:94px}
 @media(max-width:730px){#assessment .group{padding:13px 12px}#assessment .choice{min-height:48px;min-width:76px}#assessment .option{min-height:85px}}
 @media print{.ux-compact-guide,.ux-nav-tip{display:none!important}}
+
+/* Perfil Z 7B v0.5 — SOMENTE gráfico adicional de comparação: sem alteração do motor ou dados. */
+.one-page-report .r-comparison{border:1px solid #dce7ee;border-radius:3mm;padding:2.2mm 3mm 1.5mm;break-inside:avoid}
+.one-page-report .r-comparison-head{display:flex;justify-content:space-between;gap:4mm;align-items:baseline;margin-bottom:1mm}
+.one-page-report .r-comparison .r-section-title{margin:0;font-size:10.1pt}
+.one-page-report .r-comparison-key{font-size:7.6pt;white-space:nowrap;color:#526579}
+.one-page-report .r-comparison-key span{display:inline-block;width:9mm;height:0;vertical-align:middle;margin:0 1mm 1px 2mm;border-top:2px solid #187a97}
+.one-page-report .r-comparison-key span.e{border-top:2px dashed #d67c20}
+.one-page-report .r-comparison svg{width:100%;height:26mm;display:block}
+.one-page-report .r-comparison-note{font-size:7.1pt;color:#65788b;margin:0;line-height:1.15}
+.one-page-report.r-dense{gap:2.15mm;line-height:1.18}
+.one-page-report.r-dense .r-header{padding-bottom:2mm}
+.one-page-report.r-dense .r-card{padding:2.3mm}
+.one-page-report.r-dense .r-emphasis{min-height:7.8mm;margin:.7mm 0}
+.one-page-report.r-dense .r-triad{font-size:9.25pt;line-height:1.2;gap:.55mm}
+.one-page-report.r-dense .r-trait-row{padding:.9mm 0}
+.one-page-report.r-dense .r-elist{font-size:9.2pt;line-height:1.2;gap:.65mm}
+.one-page-report.r-dense .r-summary{font-size:9.2pt;line-height:1.23;padding:2mm 2.6mm}
+.one-page-report.r-dense .r-box{padding:2.4mm 3mm}
+.one-page-report.r-dense .r-comparison svg{height:23mm}
+.one-page-report.r-dense .r-footer{font-size:7.6pt;line-height:1.2}
+@media print{.one-page-report{gap:2.3mm!important}.one-page-report.r-dense{gap:1.6mm!important}}
 </style></head><body><main>
 <header><span class="logo">Perfil <span style="color:#286cbb">Z</span></span><span class="small">Instrumento PSCA · pré-publicação · uso local</span></header>
 <div class="progress not-print"><div id="prog" style="width:0"></div></div>
@@ -306,7 +328,7 @@ $('json').onclick=()=>{if(!result)return;const blob=new Blob([JSON.stringify(res
 
 // --- Renderização candidata A4. Os cálculos e os arquivos originais NÃO são modificados. ---
 const REPORT_TEXTS = {"H-P-C": "Pode tomar iniciativa e buscar encaminhamentos diante de desafios.", "H-P-F": "Pode contribuir para dar andamento às atividades e definir próximos passos.", "H-P-A": "Pode decidir rapidamente sem considerar todas as perspectivas relevantes.", "H-S-C": "Pode buscar interação, expressar ideias e participar de conversas.", "H-S-F": "Pode incentivar a participação de outras pessoas em iniciativas.", "H-S-A": "Pode se dispersar entre novidades e adiar a conclusão de algumas tarefas.", "H-C-C": "Pode valorizar cooperação, continuidade e relações de confiança.", "H-C-F": "Pode contribuir para manter acordos e dar continuidade ao trabalho coletivo.", "H-C-A": "Pode adiar conversas difíceis ao tentar preservar a harmonia.", "H-A-C": "Pode preferir examinar informações e utilizar critérios claros.", "H-A-F": "Pode ajudar a identificar detalhes e inconsistências nas informações.", "H-A-A": "Pode prolongar verificações mesmo quando já há base para decidir.", "E-P-1": "Você percebe uma expectativa de tomar iniciativa diante das demandas.", "E-P-2": "Você percebe necessidade de tomar decisões e encaminhar ações com rapidez.", "E-P-3": "Você percebe maior exigência de enfrentar obstáculos e desafios.", "E-S-1": "Você percebe expectativa de interagir e trocar ideias com frequência.", "E-S-2": "Você percebe necessidade de comunicar ideias com espontaneidade.", "E-S-3": "Você percebe expectativa de envolver outras pessoas nas iniciativas.", "E-C-1": "Você percebe expectativa de cooperar e apoiar outras pessoas.", "E-C-2": "Você percebe necessidade de manter continuidade nas atividades.", "E-C-3": "Você percebe expectativa de escuta e entendimento nas relações.", "E-A-1": "Você percebe necessidade de fundamentar decisões com critérios claros.", "E-A-2": "Você percebe expectativa de conferir informações com cuidado.", "E-A-3": "Você percebe necessidade de seguir métodos e considerar riscos."};
-const REPORT_DISPLAY_VERSION='mcu-7a-finalizacao-a4-v02';
+const REPORT_DISPLAY_VERSION='perfil-z-7b-comparativo-linhas-a4-v05-experimental';
 function renderCandidateA4(H,E,dom){
   const root=$('one-page-report');root.replaceChildren();
   const hCodes=dom.codes.slice();const hNeutral=dom.ambiguous;
@@ -319,6 +341,26 @@ function renderCandidateA4(H,E,dom){
   const contexts=document.createElement('div');contexts.className='r-contexts';
   const makeContext=(title,label,codes,data,isH)=>{const card=document.createElement('div');card.className='r-card';const tag=document.createElement('div');tag.className='r-label';tag.textContent=title;const main=document.createElement('div');main.className='r-emphasis';main.textContent=codes.length?codes.map(p=>LABEL[p]).join(' + '):(isH?'Sem predominância definida':'Sem maior ênfase definida');card.append(tag,main);for(const p of PROFILES){const line=document.createElement('div');line.className='r-barline';const code=document.createElement('span');code.className='r-code';code.textContent=p;const track=document.createElement('div');track.className='r-barbg';const fill=document.createElement('div');fill.className='r-barfill';fill.style.background=COLOR[p];fill.style.width=data.points[p]+'%';track.append(fill);const val=document.createElement('span');val.className='r-number';val.textContent=data.points[p]+' pts';line.append(code,track,val);card.append(line)}return card;};
   contexts.append(makeContext('H · Como você tende a agir',null,hCodes,H,true),makeContext('E · Exigências percebidas',null,eCodes,E,false));root.append(contexts);
+  // Visualização derivada EXCLUSIVAMENTE de points H/E já calculados; sem reinterpretação.
+  root.classList.toggle('r-dense',hNeutral||hCodes.length>=3);
+  const cmp=document.createElement('section');cmp.className='r-comparison';cmp.setAttribute('aria-label','Comparativo de linhas de pontos habituais e exigências percebidas');
+  const cmpHeader=document.createElement('div');cmpHeader.className='r-comparison-head';
+  const cmpTitle=document.createElement('h2');cmpTitle.className='r-section-title';cmpTitle.textContent='Comparativo entre o habitual e o exigido';
+  const cmpLegend=document.createElement('div');cmpLegend.className='r-comparison-key';cmpLegend.innerHTML='<span></span> H · habitual <span class="e"></span> E · trabalho';
+  cmpHeader.append(cmpTitle,cmpLegend);cmp.append(cmpHeader);
+  const xmlns='http://www.w3.org/2000/svg';const svg=document.createElementNS(xmlns,'svg');
+  svg.setAttribute('viewBox','0 0 620 110');svg.setAttribute('role','img');svg.setAttribute('aria-label','Linhas H e E para Prático, Sociável, Constante e Analítico; escala relativa de zero a sessenta pontos');
+  const svgNode=(tag,attrs,txt)=>{const n=document.createElementNS(xmlns,tag);for(const [k,v] of Object.entries(attrs))n.setAttribute(k,String(v));if(txt!==undefined)n.textContent=String(txt);return n;};
+  const xs=[80,231,382,533],ys=v=>79-Math.max(0,Math.min(60,v))*1.08;
+  for(const tick of [0,20,40,60]){const y=ys(tick);svg.append(svgNode('line',{x1:61,y1:y,x2:548,y2:y,stroke:'#dfe7ee','stroke-width':1}));svg.append(svgNode('text',{x:50,y:y+3,'text-anchor':'end','font-size':9,fill:'#627589'},tick));}
+  PROFILES.forEach((p,i)=>{svg.append(svgNode('text',{x:xs[i],y:104,'text-anchor':'middle','font-size':11,'font-weight':600,fill:'#364e62'},LABEL[p]));});
+  [[H,'#187a97',false],[E,'#d67c20',true]].forEach(([data,color,dash])=>{
+    const coords=PROFILES.map((p,i)=>[xs[i],ys(data.points[p])]);
+    svg.append(svgNode('polyline',{points:coords.map(v=>v.join(',')).join(' '),fill:'none',stroke:color,'stroke-width':2.7,'stroke-dasharray':dash?'6 4':'none','stroke-linecap':'round','stroke-linejoin':'round'}));
+    coords.forEach(([x,y],i)=>{svg.append(svgNode('circle',{cx:x,cy:y,r:3.2,fill:'#fff',stroke:color,'stroke-width':2}));});
+  });
+  cmp.append(svg);const cmpNote=document.createElement('p');cmpNote.className='r-comparison-note';cmpNote.textContent='Pontos relativos por contexto; distância entre linhas não mede esforço, pressão ou desempenho.';cmp.append(cmpNote);root.append(cmp);
+
   const profilesBox=document.createElement('section');profilesBox.className='r-box';const title=document.createElement('h2');title.className='r-section-title';title.textContent='Suas características, pontos fortes e pontos de atenção';profilesBox.append(title);
   const expl=document.createElement('p');expl.className='r-intro';expl.textContent=hNeutral?'Referências gerais dos quatro perfis — não representam dominâncias individuais.':'Possibilidades associadas aos perfis destacados nas suas escolhas habituais.';profilesBox.append(expl);
   const list=hNeutral?PROFILES:hCodes;
